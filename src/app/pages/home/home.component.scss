@@ -1,0 +1,15 @@
+.home-container {
+  width: 100vw;
+  height: calc(100vh - 3rem);
+  background-image: url("../../../assets/bg-game.jpg");
+  background-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .home-body {
+    background-color: #242f40;
+    height: 100%;
+    width: 50rem;
+  }
+}
