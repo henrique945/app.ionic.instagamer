@@ -1,1 +1,22 @@
-<p>login works!</p>
+<div class="row">
+  <div class="col-md-6 offset-md-3 mt-4">
+    <h3>Login</h3>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+        <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" ngModel required #password="ngModel" class="form-control" id="loginPassword" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <a [routerLink]="['/auth/reset-password']" >Forgot Password?</a>
+      </div>
+      <p>
+        Don't have an account?
+        <a [routerLink]="['/auth/register']" >Sign up</a>
+      </p>
+      <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Login <i class="fas fa-rocket"></i></button>
+    </form>
+  </div>
+</div>
