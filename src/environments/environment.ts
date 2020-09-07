@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiBaseUrl: 'http://localhost:3000',
+  newsUrl: 'https://facens.br/home',
+  keys: {
+    token: 'USER_TOKEN',
+    userInfo: 'USER_INFO',
+  },
+  routes: {
+    auth: '/auth/local',
+    me: '/user/me',
+  },
 };
 
 /*
