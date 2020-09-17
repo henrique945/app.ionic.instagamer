@@ -1,7 +1,15 @@
 .ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+  border-left: 5px solid #42A948 !important; /* green */
 }
 
 .ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
+  border-left: 5px solid #cc0000 !important; /* red */
+}
+
+body {
+  background:#f0f2f5;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
 }
