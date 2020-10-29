@@ -1,0 +1,9 @@
+Background Color: #f0f2f5
+Color: 	#1c1e21
+button Color: #1877f2, #4cd137
+Hover Color: #44bd32
+
+
+InstaGamer helps you connect and share your favorite games and meet other players.
+
+Forgotten account?

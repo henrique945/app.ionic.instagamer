@@ -1,6 +1,23 @@
-<app-navbar></app-navbar>
-<div class="home-container">
-  <div class="home-body">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=0"
+    charset="UTF-8">
+  <title>InstaGamer Home</title>
+  <link rel="stylesheet" href="home.component.scss">
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+
+  <div class="home-container">
+    <div class="home-body">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+
+</body>
+
+</html>

@@ -23,7 +23,7 @@ import { StorageService } from './services/storage/storage.service';
     }),
   ],
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   providers: [
     { provide: HttpAsyncService, useFactory: httpAsyncFactory, deps: [HttpClient, StorageService] },
