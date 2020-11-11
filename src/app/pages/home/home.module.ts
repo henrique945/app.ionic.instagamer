@@ -3,18 +3,16 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
-import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
+    SharedModule
   ],
-  declarations: [
-    HomeComponent,
-    NavbarComponent,
-  ],
+  declarations: [HomeComponent]
 })
 export class HomeModule {
 }
