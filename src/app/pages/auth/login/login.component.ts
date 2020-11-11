@@ -2,6 +2,7 @@
 
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../../../services/user/user.service';
 
 //#endregion
@@ -17,6 +18,7 @@ export class LoginComponent {
 
   constructor(
     private readonly userService: UserService,
+    private readonly router: Router,
   ) { }
 
   //#endregion
@@ -27,7 +29,10 @@ export class LoginComponent {
    * Método para logar no site
    */
   public async onSubmit(f: NgForm): Promise<void> {
-    await this.userService.postLogin(f.value);
+    const approved = await this.userService.postLogin(f.value);
+
+    if (approved)
+      await this.router.navigateByUrl('/home');
   }
 
   //#endregion
