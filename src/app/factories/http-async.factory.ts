@@ -45,8 +45,6 @@ export function httpAsyncFactory(
 
     key = success;
 
-    // TODO: Verificar aqui a data de expiração do Token, e ver se ainda é válido
-
     return new HttpHeaders({ Authorization: key });
   });
 

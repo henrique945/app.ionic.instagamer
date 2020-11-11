@@ -1,68 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=0" charset="UTF-8">
-  <title>InstaGamer Login</title>
-  <link rel="stylesheet" href="login.component.scss">
-</head>
-
-<body>
-  <div class="loginsignup">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="content-left">
-          <h1>InstaGamer</h1>
-          <h2>InstaGamer helps you connect and share your favorite games and meet other players.</h2>
-        </div>
-        <div class="content-right">
-          <form #f="ngForm" (ngSubmit)="onSubmit(f)" action="">
-            <div class="form-group">
-              <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="loginEmail"
-                aria-describedby="emailHelp" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
-                id="loginPassword" placeholder="Password">
-            </div>
-            <div class="login">
-              <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block">Login <i class="fas fa-rocket"></i></button>
-            </div>
-            <div class="forgot">
-              <a [routerLink]="['/auth/reset-password']">Forgot Password?</a>
-            </div>
-            <hr>
-            <div class="create-btn">
-              <a [routerLink]="['/auth/register']" class="btn">create new account</a>
-            </div>
-          </form>
-        </div>
+<div class="loginsignup">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="content-left">
+        <h1>InstaGamer</h1>
+        <h2>InstaGamer helps you connect and share your favorite games and meet other players.</h2>
+      </div>
+      <div class="content-right">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" action="">
+          <div class="form-group">
+            <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="loginEmail"
+                   aria-describedby="emailHelp" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
+                   id="loginPassword" placeholder="Password">
+          </div>
+          <div class="login">
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block">
+              Login<i class="fas fa-rocket login-icon"></i></button>
+          </div>
+          <div class="forgot">
+            <a [routerLink]="['/auth/reset-password']">Forgot Password?</a>
+          </div>
+          <hr>
+          <div class="create-btn">
+            <a [routerLink]="['/auth/register']" class="btn">create new account</a>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-</body>
-
-</html>
-
-<!--div class = "tela">
-  <div class="col text-center">
-    <h3>Login</h3>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-      <div class="form-group">
-        <input type="email" name="email" ngModel required #email="ngModel" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <input type="password" name="password" ngModel required #password="ngModel" class="form-control" id="loginPassword" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <a [routerLink]="['/auth/reset-password']" >Forgot Password?</a>
-      </div>
-      <p>
-        Don't have an account?
-        <a [routerLink]="['/auth/register']" >Sign up</a>
-      </p>
-      <button type="submit" [disabled]="f.invalid" class="btn btn-primary">Login <i class="fas fa-rocket"></i></button>
-    </form>
-  </div>
-</div-->
+</div>

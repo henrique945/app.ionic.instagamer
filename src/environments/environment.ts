@@ -13,6 +13,7 @@ export const environment = {
   routes: {
     auth: '/auth/local',
     me: '/user/me',
+    user: '/user',
   },
 };
 
