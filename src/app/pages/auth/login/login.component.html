@@ -1,33 +1,40 @@
-<div class="loginsignup">
-  <div class="container">
-    <div class="row justify-content-between">
-      <div class="content-left">
-        <h1>InstaGamer</h1>
-        <h2>InstaGamer helps you connect and share your favorite games and meet other players.</h2>
-      </div>
-      <div class="content-right">
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)" action="">
-          <div class="form-group">
-            <input type="email" name="username" ngModel required #username="ngModel" class="form-control" id="loginEmail"
-                   aria-describedby="emailHelp" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
-                   id="loginPassword" placeholder="Password">
-          </div>
-          <div class="login">
-            <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block">
-              Login<i class="fas fa-rocket login-icon"></i></button>
-          </div>
-          <div class="forgot">
-            <a [routerLink]="['/auth/reset-password']">Forgot Password?</a>
-          </div>
-          <hr>
-          <div class="create-btn">
-            <a [routerLink]="['/auth/register']" class="btn">create new account</a>
-          </div>
-        </form>
+<div class="bodyLogin">
+  <div class="loginsignup">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="content-left">
+          <h1>InstaGamer</h1>
+          <h2>InstaGamer helps you connect and share your favorite games and meet other players.</h2>
+        </div>
+        <div class="content-right">
+          <form #f="ngForm" (ngSubmit)="onSubmit(f)" action="">
+            <div class="form-group">
+              <input type="email" name="username" ngModel required #username="ngModel" class="form-control"
+                id="loginUsername" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" ngModel required #password="ngModel" class="form-control"
+                id="loginPassword" placeholder="Password">
+            </div>
+            <div class="login">
+              <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+                Login<i class="fas fa-rocket login-icon"></i></button>
+            </div>
+            <div class="forgot">
+              <a [routerLink]="['/auth/reset-password']">Forgot Password?</a>
+            </div>
+            <hr>
+            <div class="create-btn">
+              <a [routerLink]="['/auth/register']" class="btn">create new account</a>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+

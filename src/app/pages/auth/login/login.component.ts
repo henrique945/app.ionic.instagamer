@@ -31,8 +31,8 @@ export class LoginComponent {
   public async onSubmit(f: NgForm): Promise<void> {
     const approved = await this.userService.postLogin(f.value);
 
-    if (approved)
-      await this.router.navigateByUrl('/home');
+    //if (approved)
+      //await this.router.navigateByUrl('/home');
   }
 
   //#endregion

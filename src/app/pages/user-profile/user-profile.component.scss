@@ -41,7 +41,7 @@ a:hover {
 .wrapper {
   width: 100%;
   height: auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
   padding: 11rem 20px 50px;
   display: flex;
   //background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
@@ -50,8 +50,8 @@ a:hover {
 
   @media screen and (max-width: 768px) {
     height: auto;
-    min-height: 100vh;
-    padding-top: 100px;
+    min-height: calc(100vh - 4rem);
+    padding-top: 11rem;
   }
 }
 

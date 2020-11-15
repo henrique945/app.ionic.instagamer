@@ -1,3 +1,33 @@
 <app-column-one></app-column-one>
 
 <router-outlet></router-outlet>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog modal-login">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="avatar">
+          <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+        </div>
+        <h4 class="modal-title">Authentication</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form #f="ngForm" action="/examples/actions/confirmation.php" method="post">
+          <div class="form-group">
+            <p>An access code has been sent to your account email.</p>
+            <input type="text" class="form-control" ngModel required #username="ngModel" id="loginEmail" name="codAcesso" placeholder="Enter your access code here" required="required">
+          </div>
+          <div class="form-group">
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block login-btn">Submit<i class="fab fa-google-play submit-icon"></i></button>
+          </div>
+          <hr>
+          <div class="resend">
+            <a href="">Resend the Code<i class="fab fa-telegram-plane resend-icon"></i></a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
