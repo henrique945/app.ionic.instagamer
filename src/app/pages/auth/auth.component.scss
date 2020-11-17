@@ -35,6 +35,14 @@
   top: -5px;
   right: -5px;
 }
+.modal-login .close:hover,
+.modal-login .close:active,
+.modal-login .close:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
 .modal-login .modal-footer {
   background: #ecf0f1;
   border-color: #dee4e7;
@@ -135,6 +143,6 @@ hr {
   margin-top: 17px;
 }
 
-.resend-icon{
+.resend-icon {
   padding-left: 0.4rem;
 }

@@ -34,6 +34,18 @@
   padding-right: 0.3rem;
 }
 
+.navbar-nav{
+  @media screen and (max-width: 991px) {
+    flex-direction: row;
+  }
+}
+
+.nav-item {
+  @media screen and (max-width: 991px) {
+    padding: 0 0.5rem;
+  }
+}
+
 .nav-link {
   font-weight: bold;
   transform: scale(1.3);

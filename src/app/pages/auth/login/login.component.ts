@@ -1,12 +1,11 @@
 //#region Imports
-
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../../services/user/user.service';
-
 //#endregion
 
+declare var $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,13 +25,27 @@ export class LoginComponent {
   //#region Functions
 
   /**
-   * Método para logar no site
+   * Method for logging into the site
    */
   public async onSubmit(f: NgForm): Promise<void> {
     const approved = await this.userService.postLogin(f.value);
 
-    //if (approved)
-      //await this.router.navigateByUrl('/home');
+    if (approved) {
+      $('#myModal').modal('show'); // await this.router.navigateByUrl('/home');
+    } else {
+      document.getElementById('loginForm').style.height = '415px';
+      $('#alertLogin').removeClass('collapse');
+      $('#alertLogin').addClass('show');
+    }
+  }
+
+  /**
+   * Method to close the invalid login alert
+   */
+  public closeAlert() {
+    $('#alertLogin').removeClass('show');
+    $('#alertLogin').addClass('collapse');
+    document.getElementById('loginForm').style.height = '350px';
   }
 
   //#endregion
