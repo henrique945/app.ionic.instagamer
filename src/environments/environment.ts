@@ -15,6 +15,13 @@ export const environment = {
     auth: '/auth/local',
     me: '/user/me',
     user: '/user',
+    game: '/game',
+    listGames: '/game/list',
+    userGame: '/userGame',
+    post: '/post',
+    comment: '/comment',
+    favorite: '/favorite',
+    chat: '/chat',
   },
 };
 
