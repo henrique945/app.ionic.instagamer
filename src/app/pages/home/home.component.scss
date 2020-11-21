@@ -1,16 +1,145 @@
 .home-container {
-
-  height: auto;
+  height: calc(100vh - 3.1rem);
   //background-image: url("../../../assets/bg-game.jpg");
-  //background-color: #242f40;
+  background-color: #f0f2f5;
   background-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .home-body {
-    //background-color: #242f40;
+    background-color: #f0f2f5;
     height: 100%;
-    width: 50rem;
+    width: 58rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add a gray background color with some padding */
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+
+.top {
+  padding-left: 15px;
+  padding-right: 15px;
+  background: white;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.topPage {
+  height: 100px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.media .avatar {
+  margin-left: 0.5rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 9;
+  background: white;
+  padding: 2.5px;
+  box-shadow: 0 0 15px 0 rgb(108, 68, 252), 0 0 0 2.5px rgba(107, 74, 255, 0.5);
+}
+.media .avatar img {
+  width: 100%;
+}
+
+.purple-border textarea {
+  min-height:38px;
+  overflow:hidden;
+  resize:none;
+}
+
+.purple-border .form-control:focus {
+  border: 1px solid  rgba(108, 68, 252, 0.692);
+  box-shadow: 0 0 0 0.1rem rgba(107, 74, 255, 0.5);
+}
+
+.input-group-text {
+  background-color: white;
+}
+
+.input-group .form-control:focus {
+  border: 1px solid  rgba(108, 68, 252, 0.692);
+  box-shadow: 0 0 0 0.1rem rgba(107, 74, 255, 0.5);
+}
+
+.row {
+  width: 58rem;
+  margin-top: 1.875rem;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 70%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn,
+  .rightcolumn {
+    width: 100%;
+    padding: 0;
   }
 }

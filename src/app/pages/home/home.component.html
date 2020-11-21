@@ -2,6 +2,106 @@
 
 <div class="home-container">
   <div class="home-body">
+
     <router-outlet></router-outlet>
+
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="media top">
+          <div class="media-body">
+            <div class="media mt-3 shadow-textarea">
+              <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
+                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+              <div class="media-body">
+                <h5 class="mt-0 font-weight-bold blue-text">User Gamer</h5>
+                <div class="form-group basic-textarea rounded-corners purple-border">
+                  <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="1"
+                    placeholder="What's playing?"></textarea>
+                </div>
+                <div class="input-group mb-3 w-50">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon3"><i class="fas fa-photo-video"></i></span>
+                  </div>
+                  <input type="text" class="form-control" id="basic-url" placeholder="Enter an image URL here"
+                    aria-describedby="basic-addon3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>TITLE HEADING</h2>
+          <h5>Title description, Dec 7, 2017</h5>
+          <div class="fakeimg" style="height:200px;">Image</div>
+          <p>Some text..</p>
+          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco.</p>
+        </div>
+        <div class="card">
+          <h2>TITLE HEADING</h2>
+          <h5>Title description, Sep 2, 2017</h5>
+          <div class="fakeimg" style="height:200px;">Image</div>
+          <p>Some text..</p>
+          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            ullamco.</p>
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About Me</h2>
+          <div class="fakeimg" style="height:100px;">Image</div>
+          <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        </div>
+        <div class="card">
+          <h3>Popular Post</h3>
+          <div class="fakeimg">Image</div><br>
+          <div class="fakeimg">Image</div><br>
+          <div class="fakeimg">Image</div>
+        </div>
+        <div class="card">
+          <h3>Follow Me</h3>
+          <p>Some text..</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="avatar">
+              <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+            </div>
+            <h4 class="modal-title">Authentication</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form #f="ngForm" action="/examples/actions/confirmation.php" method="post">
+              <div class="form-group">
+                <p>An access code has been sent to your account email.</p>
+                <input type="text" class="form-control" ngModel required #username="ngModel" id="loginEmail"
+                  name="codAcesso" placeholder="Enter your access code here" required="required">
+              </div>
+              <div class="form-group">
+                <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block login-btn">Submit<i
+                    class="fab fa-google-play submit-icon"></i></button>
+              </div>
+              <hr>
+              <div class="resend">
+                <a href="">Resend the Code<i class="fab fa-telegram-plane resend-icon"></i></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
