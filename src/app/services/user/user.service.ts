@@ -43,8 +43,14 @@ export class UserService {
   /**
    * Método para criar um usuário
    */
-  public async postUser(payload: RegisterPayload): Promise<void> {
-    await this.userInteractor.postUser(payload);
+  public async postUser(payload: RegisterPayload): Promise<boolean> {
+    payload.cpf = '12345678980';
+    const { error, success } = await this.userInteractor.postUser(payload);
+
+    if (error)
+      return false;
+
+    return true;
   }
 
   //#endregion

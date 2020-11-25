@@ -24,6 +24,13 @@
                   </div>
                   <input type="text" class="form-control" id="basic-url" placeholder="Enter an image URL here"
                     aria-describedby="basic-addon3">
+                  <div class="list-game">
+                    <select>
+                      <ng-container *ngFor="let game of listGames">
+                        <option value="">{{game.name}}</option>
+                      </ng-container>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>

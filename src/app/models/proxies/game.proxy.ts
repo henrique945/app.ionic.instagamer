@@ -2,7 +2,7 @@ export interface GameProxy {
 
   titleImage: string;
   listImages: string;
-  whoName: string;
-  whoDescription: string;
+  name: string;
+  description: string;
 
 }
