@@ -11,19 +11,9 @@
         </div>
 
         <div class="profile-card__cnt js-profile-cnt">
-          <div class="profile-card__name">Muhammed Erdem</div>
-          <div class="profile-card__txt">Front-end Developer from <strong>Mesopotamia</strong></div>
-          <div class="profile-card-loc">
-              <span class="profile-card-loc__icon">
-                <svg class="icon">
-                  <use xlink:href="#icon-location"></use>
-                </svg>
-              </span>
-
-            <span class="profile-card-loc__txt">
-                Istanbul, Turkey
-              </span>
-          </div>
+          <div class="profile-card__name">{{user.name}}</div>
+          <div class="profile-card__txt">{{user.email}}</div>
+          <div class="profile-card__txt">{{user.description}}</div>
 
           <div class="profile-card-inf">
             <div class="profile-card-inf__item">

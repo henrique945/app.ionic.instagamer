@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { UserInteractor } from '../../interactors/user/user.interactor';
 import { LoginPayload } from '../../models/payloads/login.payload';
 import { RegisterPayload } from '../../models/payloads/register.payload';
+import { UserProxy } from '../../models/proxies/user.proxy';
 import { StorageService } from '../storage/storage.service';
 
 //#endregion
@@ -24,6 +25,19 @@ export class UserService {
   //#endregion
 
   //#region Functions
+
+  /**
+   * Método para buscar informações do meu usuário
+   */
+  public async getMe(): Promise<UserProxy> {
+    const { error, success } = await this.userInteractor.getMe();
+
+    if (error)
+      return;
+
+    await this.storage.setItem(environment.keys.userInfo, success);
+    return success;
+  }
 
   /**
    * Método para o usuário logar no site

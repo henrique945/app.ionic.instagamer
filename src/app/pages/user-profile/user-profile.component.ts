@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserProxy } from '../../models/proxies/user.proxy';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly userService: UserService,
+  ) { }
 
-  ngOnInit(): void {
+  /**
+   * As informações do usuário
+   */
+  public user: UserProxy = {
+    name: '',
+    email: '',
+    description: '',
+    cpf: '',
+  };
+
+  public async ngOnInit(): Promise<void> {
+    this.user = await this.userService.getMe();
+
     // let messageBox = document.querySelector('.js-message');
     const btn = document.querySelector('.js-message-btn');
     const card = document.querySelector('.js-profile-card');
