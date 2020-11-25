@@ -4,7 +4,7 @@
   <div class="userProfile-body">
     <div class="wrapper">
 
-      <div class="profile-card js-profile-card">
+      <div class="profile-card">
         <div class="profile-card__img">
           <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png"
                alt="profile card">
@@ -38,7 +38,7 @@
           </div>
 
           <div class="profile-card-social">
-            <a href="https://www.facebook.com/iaMuhammedErdem" class="profile-card-social__item facebook"
+            <a class="profile-card-social__item facebook"
                target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
@@ -47,7 +47,7 @@
                 </span>
             </a>
 
-            <a href="https://twitter.com/iaMuhammedErdem" class="profile-card-social__item twitter" target="_blank">
+            <a class="profile-card-social__item twitter" target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
                     <use xlink:href="#icon-twitter"></use>
@@ -55,7 +55,7 @@
                 </span>
             </a>
 
-            <a href="https://www.instagram.com/iamuhammederdem" class="profile-card-social__item instagram"
+            <a class="profile-card-social__item instagram"
                target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
@@ -64,7 +64,7 @@
                 </span>
             </a>
 
-            <a href="https://www.behance.net/iaMuhammedErdem" class="profile-card-social__item behance"
+            <a class="profile-card-social__item behance"
                target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
@@ -73,7 +73,7 @@
                 </span>
             </a>
 
-            <a href="https://github.com/muhammederdem" class="profile-card-social__item github" target="_blank">
+            <a class="profile-card-social__item github" target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
                     <use xlink:href="#icon-github"></use>
@@ -81,7 +81,7 @@
                 </span>
             </a>
 
-            <a href="https://codepen.io/JavaScriptJunkie" class="profile-card-social__item codepen" target="_blank">
+            <a class="profile-card-social__item codepen" target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
                     <use xlink:href="#icon-codepen"></use>
@@ -89,44 +89,21 @@
                 </span>
             </a>
 
-            <a href="http://muhammederdem.com.tr/" class="profile-card-social__item link" target="_blank">
+            <a class="profile-card-social__item link" target="_blank">
                 <span class="icon-font">
                   <svg class="icon">
                     <use xlink:href="#icon-link"></use>
                   </svg>
                 </span>
             </a>
-
           </div>
 
           <div class="profile-card-ctr">
-            <button class="profile-card__button button--blue js-message-btn">Message</button>
-            <button class="profile-card__button button--orange">Follow</button>
+            <button class="profile-card__button button--blue">Upgrade To Pro</button>
+            <button class="profile-card__button button--orange" (click)="performLogout()">Logout</button>
           </div>
         </div>
-
-        <div class="profile-card-message js-message">
-          <form class="profile-card-form">
-            <div class="profile-card-form__container">
-              <textarea placeholder="Say something..."></textarea>
-            </div>
-
-            <div class="profile-card-form__bottom">
-              <button class="profile-card__button button--blue js-message-close">
-                Send
-              </button>
-
-              <button class="profile-card__button button--gray js-message-close">
-                Cancel
-              </button>
-            </div>
-          </form>
-
-          <div class="profile-card__overlay js-message-close"></div>
-        </div>
-
       </div>
-
     </div>
 
     <svg hidden="hidden">
