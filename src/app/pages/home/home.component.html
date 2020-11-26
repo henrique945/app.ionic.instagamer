@@ -18,20 +18,29 @@
                   <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="1"
                     placeholder="What's playing?"></textarea>
                 </div>
-                <div class="input-group mb-3 w-50">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon3"><i class="fas fa-photo-video"></i></span>
+                <form class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon3"><i class="fas fa-photo-video"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="basic-url" placeholder="Enter an image URL here"
+                        aria-describedby="basic-addon3">
+                    </div>
                   </div>
-                  <input type="text" class="form-control" id="basic-url" placeholder="Enter an image URL here"
-                    aria-describedby="basic-addon3">
-                  <div class="list-game">
-                    <select>
+                  <div class="list-game mb-3">
+                    <select class="custom-select" >
+                      <option value="" selected disabled hidden>Choose the Game</option>
                       <ng-container *ngFor="let game of listGames">
                         <option value="">{{game.name}}</option>
                       </ng-container>
                     </select>
                   </div>
-                </div>
+                  <div class="post mb-3">
+                    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">
+                      Post<i class="fas fa-crosshairs post-icon"></i></button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
