@@ -27,7 +27,7 @@ export class PostInteractor {
    * Método para buscar todos os posts
    */
   public async getAllPosts(): Promise<AsyncResult<PostProxy[]>> {
-    return await this.http.get<PostProxy[]>(environment.routes.post);
+    return await this.http.get<PostProxy[]>(`${environment.routes.post}?join=game`);
   }
 
   /**
