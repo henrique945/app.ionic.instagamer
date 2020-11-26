@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { LoginPayload } from '../../models/payloads/login.payload';
 import { RegisterPayload } from '../../models/payloads/register.payload';
 import { LoginProxy } from '../../models/proxies/token.proxy';
+import { UserProxy } from '../../models/proxies/user.proxy';
 import { AsyncResult, HttpAsyncService } from '../../services/http-async.service.ts/http-async.service';
 
 //#endregion
@@ -23,6 +24,13 @@ export class UserInteractor {
   //#endregion
 
   //#region Functions
+
+  /**
+   * Método para buscar informações do meu usuário
+   */
+  public async getMe(): Promise<AsyncResult<UserProxy>> {
+    return await this.http.get<UserProxy>(environment.routes.me);
+  }
 
   /**
    * Método para o usuário logar no site
