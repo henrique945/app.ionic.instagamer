@@ -9,6 +9,7 @@ import { UserService } from '../../services/user/user.service';
 
 //#endregion
 
+declare var $: any;
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -57,6 +58,13 @@ export class UserProfileComponent implements OnInit {
   public async performLogout(): Promise<void> {
     await this.storage.clear();
     await this.router.navigateByUrl('/auth/login');
+  }
+
+  /**
+   * Edit Profile
+   */
+  public async editProfile(): Promise<void> {
+    $('#myModal').modal('show');
   }
 
   //#endregion

@@ -122,9 +122,9 @@ a:hover {
 
   &__name {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 30px;
     color: #7f53cc;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     text-transform: capitalize;
   }
 
@@ -432,4 +432,165 @@ a:hover {
     border-radius: 12px;
     transition: all 0.3s;
   }
+}
+
+.modal-login {
+  position: absolute;
+  top: 12rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: black;
+  width: 350px;
+}
+.modal-login .modal-content {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+}
+.modal-login .modal-header {
+  border-bottom: none;
+  position: relative;
+  justify-content: center;
+}
+.modal-login h4 {
+  text-align: center;
+  font-size: 26px;
+  margin: 40px 0 -15px;
+  margin-bottom: 20px;
+}
+.modal-login .form-control:focus {
+  border-color: #6441a5;
+}
+.modal-login .form-control,
+.modal-login .btn {
+  min-height: 40px;
+  border-radius: 3px;
+}
+.modal-login .close {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+.modal-login .close:hover,
+.modal-login .close:active,
+.modal-login .close:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
+}
+
+.modal-login .modal-footer {
+  background: #ecf0f1;
+  border-color: #dee4e7;
+  text-align: center;
+  justify-content: center;
+  margin: 0 -20px -20px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+.modal-login .modal-footer a {
+  color: #999;
+}
+.modal-login .avatar {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: -70px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  z-index: 9;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 5px 50px 0 rgb(108, 68, 252), 0 0 0 7px rgba(107, 74, 255, 0.5);
+}
+.modal-login .avatar img {
+  width: 100%;
+}
+.modal-login.modal-dialog {
+  margin: auto;
+}
+
+.modal-login form label {
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+.modal-login form input {
+  width: 100%;
+  height: 50px;
+  font-size: 17px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-bottom: 15px;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+
+.modal-login form input:hover {
+  border: 2px solid #aa92d4;
+}
+
+.modal-login form input:focus {
+  border: 2px solid #aa92d4;
+}
+
+.modal-login .btn,
+.modal-login .btn:active {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 0 17px;
+  color: #fff;
+  border-radius: 4px;
+  background: #6441a5 !important;
+  border-color: #6441a5;
+  height: 50px;
+  text-decoration: none;
+  transition: all 0.4s;
+  line-height: 50px;
+  text-transform: capitalize;
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: 0.3s;
+  margin-bottom: 5px;
+}
+.modal-login .btn:hover,
+.modal-login .btn:focus {
+  background: #6441a5;
+}
+.trigger-btn {
+  display: inline-block;
+  margin: 100px auto;
+}
+
+.edit-icon {
+  padding-left: 0.5rem;
+}
+
+.logout-icon {
+  padding-left: 0.5rem;
+}
+
+.update-icon {
+  padding-left: 0.5rem;
+  transform: scale(0.9);
+}
+
+.resend a {
+  font-size: 14px;
+  line-height: 19px;
+  color: #8469b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+hr {
+  margin-top: 17px;
 }

@@ -3,16 +3,13 @@
 <div class="userProfile-container">
   <div class="userProfile-body">
     <div class="wrapper">
-
       <div class="profile-card">
         <div class="profile-card__img">
-          <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png"
-               alt="profile card">
+          <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="profile card">
         </div>
 
         <div class="profile-card__cnt js-profile-cnt">
           <div class="profile-card__name">{{user.name}}</div>
-          <div class="profile-card__txt">{{user.email}}</div>
           <div class="profile-card__txt">{{user.description}}</div>
 
           <div class="profile-card-inf">
@@ -28,16 +25,11 @@
 
             <div class="profile-card-inf__item">
               <div class="profile-card-inf__title">123</div>
-              <div class="profile-card-inf__txt">Articles</div>
-            </div>
-
-            <div class="profile-card-inf__item">
-              <div class="profile-card-inf__title">85</div>
-              <div class="profile-card-inf__txt">Works</div>
+              <div class="profile-card-inf__txt">Posts</div>
             </div>
           </div>
 
-          <div class="profile-card-social">
+          <!--div class="profile-card-social">
             <a class="profile-card-social__item facebook"
                target="_blank">
                 <span class="icon-font">
@@ -96,11 +88,13 @@
                   </svg>
                 </span>
             </a>
-          </div>
+          <div!-->
 
           <div class="profile-card-ctr">
-            <button class="profile-card__button button--blue">Upgrade To Pro</button>
-            <button class="profile-card__button button--orange" (click)="performLogout()">Logout</button>
+            <button class="profile-card__button button--blue" (click)="editProfile()">Edit Profile<i
+                class="fas fa-user-edit edit-icon"></i></button>
+            <button class="profile-card__button button--orange" (click)="performLogout()">Logout<i
+                class="fas fa-dungeon logout-icon"></i></button>
           </div>
         </div>
       </div>
@@ -201,5 +195,42 @@
       </defs>
     </svg>
   </div>
-</div>
 
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="avatar">
+            <img src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+          </div>
+          <h4 class="modal-title">Edit Profile</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form #f="ngForm" action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <label for="registerName">User Name</label>
+              <input type="text" name="name" value="{{user.name}}" ngModel required #name="ngModel" class="form-control"
+                id="registerName" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="registerEmail">Email Address</label>
+              <input type="email" name="email" value="{{user.email}}" ngModel required #email="ngModel"
+                class="form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="registerDescription">User Description</label>
+              <input type="text" name="description" value="{{user.description}}" ngModel #email="ngModel"
+                class="form-control" id="registerDescription" placeholder="Description">
+            </div>
+            <div class="form-group">
+              <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn-lg btn-block login-btn">Update<i
+                  class="fas fa-save update-icon"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
