@@ -14,8 +14,8 @@ export interface PostProxy {
   whoName: string;
   whoDescription: string;
 
-  user: UserProxy;
-  game: GameProxy;
-  comments: CommentProxy[];
+  user?: UserProxy;
+  game?: GameProxy;
+  comments?: CommentProxy[];
 
 }

@@ -33,6 +33,7 @@ export class UserProfileComponent implements OnInit {
    * As informações do usuário
    */
   public user: UserProxy = {
+    id: 0,
     name: '',
     email: '',
     description: '',
@@ -49,6 +50,7 @@ export class UserProfileComponent implements OnInit {
     if (!user)
       await this.router.navigateByUrl('/auth/login');
 
+    // user info
     this.user = await this.userService.getMe();
   }
 
