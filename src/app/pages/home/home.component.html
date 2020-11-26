@@ -13,51 +13,41 @@
               <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
                 src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
               <div class="media-body">
-                <h5 class="mt-0 font-weight-bold blue-text">User Gamer</h5>
+                <h5 class="mt-0 font-weight-bold blue-text" style="text-transform: capitalize">{{user.name || 'User Name'}}</h5>
                 <div class="form-group basic-textarea rounded-corners purple-border">
                   <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="1"
-                    placeholder="What's playing?"></textarea>
+                    placeholder="What's playing?" [(ngModel)]="post.whoDescription"></textarea>
                 </div>
-                <form class="form-inline">
+                <div class="form-inline">
                   <div class="form-group">
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="basic-addon3"><i class="fas fa-photo-video"></i></span>
                       </div>
                       <input type="text" class="form-control" id="basic-url" placeholder="Enter an image URL here"
-                        aria-describedby="basic-addon3">
+                        aria-describedby="basic-addon3" [(ngModel)]="post.imageUrl">
                     </div>
                   </div>
                   <div class="list-game mb-3">
-                    <select class="custom-select" >
-                      <option value="" selected disabled hidden>Choose the Game</option>
+                    <select class="custom-select"  [(ngModel)]="post.gameId">
+                      <option value="0" selected disabled hidden>Choose the Game</option>
                       <ng-container *ngFor="let game of listGames">
-                        <option value="">{{game.name}}</option>
+                        <option [value]="+game.id">{{game.name}}</option>
                       </ng-container>
                     </select>
                   </div>
                   <div class="post mb-3">
-                    <button type="submit" [disabled]="f.invalid" class="btn btn-primary">
-                      Post<i class="fas fa-crosshairs post-icon"></i></button>
+                    <button type="submit" [disabled]="post.whoDescription === ''" class="btn btn-primary" (click)="createPost()">                      Post<i class="fas fa-crosshairs post-icon"></i></button>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" *ngFor="let post of listPost">
           <h2>TITLE HEADING</h2>
           <h5>Title description, Dec 7, 2017</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
-          <p>Some text..</p>
-          <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco.</p>
-        </div>
-        <div class="card">
-          <h2>TITLE HEADING</h2>
-          <h5>Title description, Sep 2, 2017</h5>
           <div class="fakeimg" style="height:200px;">Image</div>
           <p>Some text..</p>
           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
