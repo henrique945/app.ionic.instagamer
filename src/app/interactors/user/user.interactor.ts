@@ -9,7 +9,7 @@ import { UserProxy } from '../../models/proxies/user.proxy';
 import { AsyncResult, HttpAsyncService } from '../../services/http-async.service.ts/http-async.service';
 
 //#endregion
-
+declare var $: any;
 @Injectable({
   providedIn: 'root',
 })
@@ -30,6 +30,13 @@ export class UserInteractor {
    */
   public async getMe(): Promise<AsyncResult<UserProxy>> {
     return await this.http.get<UserProxy>(environment.routes.me);
+  }
+
+  /**
+   * Método para buscar informações de um usuário pelo id
+   */
+  public async getUserById(id: number): Promise<AsyncResult<UserProxy>> {
+    return await this.http.get<UserProxy>(`${environment.routes.user}/${id}`);
   }
 
   /**

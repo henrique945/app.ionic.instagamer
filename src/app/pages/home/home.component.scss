@@ -65,6 +65,41 @@ body {
   width: 100%;
 }
 
+.media .avatarGame {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  z-index: 9;
+  background: none;
+  padding: 2.5px;
+}
+.media h2 {
+  font-size: 1.5rem;
+}
+
+.card .aLike {
+  color: #815fc0;
+  width: fit-content;
+}
+.card .aLike i:hover,
+i:focus {
+  color: #815fc0;
+}
+.card .btnLike .like-icon {
+  align-content: center;
+}
+
+.card .numberLikes {
+  display: inline;
+  padding-left: 0.3rem;
+  color: #815fc0;
+}
+
 .list-game {
   margin-left: 1.28rem;
   margin-right: 1.28rem;
@@ -123,6 +158,11 @@ body {
   margin-left: 0;
 }
 
+.description {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
@@ -146,7 +186,7 @@ body {
   align-items: center;
 }
 
-.game hr{
+.game hr {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
@@ -156,11 +196,30 @@ body {
   margin-bottom: 0.8rem;
 }
 
+.btnFollow {
+  padding: 0.15rem 0.18em;
+  color: #ac7fff;
+  border-color: #ac7fff;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btnFollow:hover,
+.btnFollow:focus {
+  background-color: rgba(168, 122, 255, 0.123);
+}
+
+.btnFollow:active {
+  color: #ac7fff !important;
+  border-color: #ac7fff !important;
+  background-color: rgba(168, 122, 255, 0.123) !important;
+}
+
 .user {
   align-items: center;
 }
 
-.user hr{
+.user hr {
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
@@ -170,6 +229,7 @@ body {
   background-color: #aaa;
   width: 100%;
   padding: 20px;
+  margin-bottom: 1rem;
 }
 
 /* Add a card effect for articles */

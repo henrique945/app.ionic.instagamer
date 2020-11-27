@@ -40,6 +40,18 @@ export class UserService {
   }
 
   /**
+   * Método para buscar informações de um usuário pelo id
+   */
+  public async getUserById(id: number): Promise<UserProxy> {
+    const { error, success } = await this.userInteractor.getUserById(id);
+
+    if (error)
+      return;
+
+    return success;
+  }
+
+  /**
    * Método para o usuário logar no site
    */
   public async postLogin(payload: LoginPayload): Promise<boolean> {

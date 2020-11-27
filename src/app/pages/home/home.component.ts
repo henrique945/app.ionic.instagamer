@@ -1,5 +1,6 @@
 //#region Imports
 
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
@@ -66,6 +67,17 @@ export class HomeComponent implements OnInit {
    */
   public listPost: PostProxy[] = [];
 
+  /**
+   * As informações do usuário do post
+   */
+  public userPost: UserProxy = {
+    id: 0,
+    email: '',
+    description: '',
+    cpf: '',
+    name: '',
+  };
+
   //#endregion
 
   //#region Functions
@@ -109,6 +121,16 @@ export class HomeComponent implements OnInit {
     this.post.whoDescription = '';
     this.post.imageUrl = '';
     this.post.gameId = 0;
+
+    // listPost
+    this.listPost = await this.postService.getAllPosts();
+  }
+
+  /**
+   * Método para pegar User post
+  */
+  public async getUserPost(id: number): Promise<void> {
+    this.userPost.name = this.user.name;
   }
 
   //#endregion

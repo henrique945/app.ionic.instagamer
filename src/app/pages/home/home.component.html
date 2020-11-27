@@ -13,7 +13,8 @@
               <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
                 src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
               <div class="media-body">
-                <h5 class="mt-0 font-weight-bold blue-text" style="text-transform: capitalize">{{user.name || 'User Name'}}</h5>
+                <h5 class="mt-0 font-weight-bold blue-text" style="text-transform: capitalize">
+                  {{user.name || 'User Name'}}</h5>
                 <div class="form-group basic-textarea rounded-corners purple-border">
                   <textarea class="form-control z-depth-1" id="exampleFormControlTextarea345" rows="1"
                     placeholder="What's playing?" [(ngModel)]="post.whoDescription"></textarea>
@@ -29,7 +30,7 @@
                     </div>
                   </div>
                   <div class="list-game mb-3">
-                    <select class="custom-select"  [(ngModel)]="post.gameId">
+                    <select class="custom-select" [(ngModel)]="post.gameId">
                       <option value="0" selected disabled hidden>Choose the Game</option>
                       <ng-container *ngFor="let game of listGames">
                         <option [value]="+game.id">{{game.name}}</option>
@@ -37,7 +38,8 @@
                     </select>
                   </div>
                   <div class="post mb-3">
-                    <button type="submit" [disabled]="post.whoDescription === ''" class="btn btn-primary" (click)="createPost()">                      Post<i class="fas fa-crosshairs post-icon"></i></button>
+                    <button type="submit" [disabled]="post.whoDescription === ''" class="btn btn-primary"
+                      (click)="createPost()"> Post<i class="fas fa-crosshairs post-icon"></i></button>
                   </div>
                 </div>
               </div>
@@ -46,10 +48,27 @@
         </div>
 
         <div class="card" *ngFor="let post of listPost">
-          <h2>{{post.game.name}}</h2>
-          <h5>Title description, Dec 7, 2017</h5>
+          <p hidden> {{getUserPost(1)}}</p>
+          <div class="media post">
+            <div class="media user">
+              <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
+                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+              <h2>{{userPost.name || 'User Name'}}</h2>
+            </div>
+            <div class="media game ml-auto">
+              <img class="d-flex rounded-circle avatarGame z-depth-1-half"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/1024px-Video-Game-Controller-Icon-IDV-green.svg.png"
+                alt="Avatar">
+              <h2>{{post.game.name || 'Game'}}</h2>
+            </div>
+          </div>
+          <h5 class='description'>{{post.whoDescription || 'Post Description'}}</h5>
           <div class="fakeimg" style="height:200px;">Image</div>
-          <p>{{post.whoDescription}}</p>
+          <div style="float:left;">
+            <a class="aLike" style="display:inline" [routerLink]="" routerLinkActive="active"><i
+                class="far fa-heart like-icon"></i></a>
+            <span class="numberLikes">300</span>
+          </div>
         </div>
       </div>
       <div class="rightcolumn">
@@ -57,21 +76,27 @@
           <h3>Games to follow</h3>
           <hr>
           <div class="media game">
-            <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+            <img class="d-flex rounded-circle avatarGame z-depth-1-half"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/1024px-Video-Game-Controller-Icon-IDV-green.svg.png"
+              alt="Avatar">
+            <span>{{'Game'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
           <div class="media game">
-            <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+            <img class="d-flex rounded-circle avatarGame z-depth-1-half"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/1024px-Video-Game-Controller-Icon-IDV-green.svg.png"
+              alt="Avatar">
+            <span>{{'Game'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
           <div class="media game">
-            <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+            <img class="d-flex rounded-circle avatarGame z-depth-1-half"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Video-Game-Controller-Icon-IDV-green.svg/1024px-Video-Game-Controller-Icon-IDV-green.svg.png"
+              alt="Avatar">
+            <span>{{'Game'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
         </div>
@@ -80,33 +105,27 @@
           <hr>
           <div class="media user">
             <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+              src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+            <span>{{'User Name'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
           <div class="media user">
             <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+              src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+            <span>{{'User Name'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
           <div class="media user">
             <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
-                src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-            <span>{{user.name || 'User Name'}}</span>
+              src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
+            <span>{{'User Name'}}</span>
+            <button type="button" class="btn btnFollow btn-outline-info btn-sm ml-auto">Follow</button>
           </div>
           <hr style="margin-top: 0.8rem">
-        </div>
-        <div class="card">
-          <h2>About Me</h2>
-          <div class="fakeimg" style="height:100px;">Image</div>
-          <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
         </div>
       </div>
-    </div>
-
-    <div class="footer">
-      <h2>Footer</h2>
     </div>
 
     <!-- Modal HTML -->
