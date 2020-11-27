@@ -61,6 +61,7 @@ body {
   padding: 2.5px;
   box-shadow: 0 0 15px 0 rgb(108, 68, 252), 0 0 0 2.5px rgba(107, 74, 255, 0.5);
 }
+
 .media .avatar img {
   width: 100%;
 }
@@ -78,6 +79,7 @@ body {
   background: none;
   padding: 2.5px;
 }
+
 .media h2 {
   font-size: 1.5rem;
 }
@@ -86,10 +88,12 @@ body {
   color: #815fc0;
   width: fit-content;
 }
+
 .card .aLike i:hover,
 i:focus {
   color: #815fc0;
 }
+
 .card .btnLike .like-icon {
   align-content: center;
 }
@@ -228,8 +232,13 @@ i:focus {
 .fakeimg {
   background-color: #aaa;
   width: 100%;
-  padding: 20px;
   margin-bottom: 1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 /* Add a card effect for articles */

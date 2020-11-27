@@ -94,6 +94,8 @@ export class HomeComponent implements OnInit {
     // listPost
     this.listPost = await this.postService.getAllPosts();
 
+    this.listPost = this.listPost.reverse();
+
     const textarea = document.querySelector('textarea');
 
     textarea.addEventListener('keydown', autosize);
@@ -124,6 +126,7 @@ export class HomeComponent implements OnInit {
 
     // listPost
     this.listPost = await this.postService.getAllPosts();
+    this.listPost = this.listPost.reverse();
   }
 
   /**

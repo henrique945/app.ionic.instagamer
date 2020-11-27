@@ -53,7 +53,7 @@
             <div class="media user">
               <img class="d-flex rounded-circle avatar z-depth-1-half mr-3"
                 src="https://www.searchpng.com/wp-content/uploads/2018/12/Gamer-Png-icon.png" alt="Avatar">
-              <h2>{{userPost.name || 'User Name'}}</h2>
+              <h2>{{post.name || 'User Name'}}</h2>
             </div>
             <div class="media game ml-auto">
               <img class="d-flex rounded-circle avatarGame z-depth-1-half"
@@ -62,8 +62,10 @@
               <h2>{{post.game.name || 'Game'}}</h2>
             </div>
           </div>
-          <h5 class='description'>{{post.whoDescription || 'Post Description'}}</h5>
-          <div class="fakeimg" style="height:200px;">Image</div>
+          <h5 class='description'>{{post.description || 'Post Description'}}</h5>
+          <div class="fakeimg" style="height:200px;" *ngIf="post.imageUrl && post.imageUrl !== ''">
+            <img [src]="post.imageUrl">
+          </div>
           <div style="float:left;">
             <a class="aLike" style="display:inline" [routerLink]="" routerLinkActive="active"><i
                 class="far fa-heart like-icon"></i></a>

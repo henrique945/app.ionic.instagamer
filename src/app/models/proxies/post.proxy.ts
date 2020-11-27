@@ -13,6 +13,8 @@ export interface PostProxy {
   gameId: number;
   whoName: string;
   whoDescription: string;
+  name?: string;
+  description?: string;
 
   user?: UserProxy;
   game?: GameProxy;
