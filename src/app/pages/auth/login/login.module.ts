@@ -1,8 +1,12 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+//#region Imports
+
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login.component';
+
+//#endregion
 
 const routes: Routes = [{ path: '', component: LoginComponent }];
 
@@ -12,6 +16,6 @@ const routes: Routes = [{ path: '', component: LoginComponent }];
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes),
-  ]
+  ],
 })
-export class LoginModule { }
+export class LoginModule {}

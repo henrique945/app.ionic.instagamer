@@ -33,12 +33,13 @@ export class LoginComponent {
   public async onSubmit(f: NgForm): Promise<void> {
     const approved = await this.userService.postLogin(f.value);
 
-    if (approved)
-      await this.router.navigateByUrl('/home');
-
-    document.getElementById('loginForm').style.height = '415px';
-    $('#alertLogin').removeClass('collapse');
-    $('#alertLogin').addClass('show');
+    if (approved) {
+      $('#myModal').modal('show');
+    } else {
+      document.getElementById('loginForm').style.height = '415px';
+      $('#alertLogin').removeClass('collapse');
+      $('#alertLogin').addClass('show');
+    }
   }
 
   /**
