@@ -33,19 +33,18 @@ export class LoginComponent {
   public async onSubmit(f: NgForm): Promise<void> {
     const approved = await this.userService.postLogin(f.value);
 
-    if (approved) {
-      $('#myModal').modal('show');
-    } else {
-      document.getElementById('loginForm').style.height = '415px';
-      $('#alertLogin').removeClass('collapse');
-      $('#alertLogin').addClass('show');
-    }
+    if (approved)
+      await this.router.navigateByUrl('/home');
+
+    document.getElementById('loginForm').style.height = '415px';
+    $('#alertLogin').removeClass('collapse');
+    $('#alertLogin').addClass('show');
   }
 
   /**
    * Method to close the invalid login alert
    */
-  public closeAlert() {
+  public closeAlert(): void {
     $('#alertLogin').removeClass('show');
     $('#alertLogin').addClass('collapse');
     document.getElementById('loginForm').style.height = '350px';
