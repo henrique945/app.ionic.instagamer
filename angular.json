@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "instagamer"
+    }
+  },
+  "defaultProject": "instagamer",
+  "cli": {
+    "analytics": "79b0a9e9-9334-44e8-ad5b-25c00cbd43f2"
+  }
 }

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://instagamer-api.herokuapp.com',
+  apiBaseUrl: 'https://instagamer-api.herokuapp.com/dev',
   // apiBaseUrl: 'http://localhost:3000',
   newsUrl: 'https://facens.br/home',
   keys: {
